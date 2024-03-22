@@ -14,6 +14,7 @@ export default{
 
     let numInstalls = [];
     let years = [];
+
     for(let i = 0; i < pieChartData.length; i++ ){
       numInstalls.push(pieChartData[i].numInstalls)
       years.push(pieChartData[i].year)
