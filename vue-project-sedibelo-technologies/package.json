@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "chart.js": "^4.4.2",
-    "datatables.net-dt": "^2.0.2",
-    "datatables.net-responsive-dt": "^3.0.0",
     "vue": "^3.4.21",
     "vue-router": "^4.0.13"
   },
