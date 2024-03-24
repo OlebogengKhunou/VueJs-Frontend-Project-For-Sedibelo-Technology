@@ -43,7 +43,6 @@ export default {
       const div2 = document.querySelector('.me-auto'); // Get the target parent element
       const div3 = document.querySelector('.dt-length');
       div2.replaceChild(div1, div3); // Append div1 to div2
-      console.log(div2)
       
     }},
   mounted() {
