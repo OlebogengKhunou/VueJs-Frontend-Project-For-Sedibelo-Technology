@@ -101,24 +101,32 @@ export default {
  /* Mobile styles */
  @media only screen and (max-width: 600px) {
   .col-12 {
-  height: 280px;
+  height: 240px;
   overflow-y: auto;
 }
 .container{
-  font-size: 10px;
+  font-size: 12px;
 }
 .form-select{
-  font-size: 10px;
+  font-size: 12px;
 }
-.dt-paging{
-  font-size: 10px;
+.page-link{
+  font-size: 12px;
 }
   }
 
   /* Tablet styles */
   @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .col-12 {
-  height: 530px;
+  height: 480px;
+  overflow-y: auto;
+}
+  }
+
+    /* desktop styles */
+    @media only screen and (min-width: 1025px) {
+    .col-12 {
+  height: 410px;
   overflow-y: auto;
 }
   }
