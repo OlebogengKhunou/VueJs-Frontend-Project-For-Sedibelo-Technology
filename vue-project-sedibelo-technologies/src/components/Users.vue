@@ -1,6 +1,13 @@
 <template>
   <!--<p v-for="user in users" :key="users.indexOf(user)">{{user.name}}</p>-->
   <div class='container'>
+    <div class="dt-filter">
+    <!-- <label for='myFilterOption'>Filter By Designation:</label> -->
+    <select v-model="selectedDesignation" class="form-select" id='myFilterOption'>
+      <option value="">All</option>
+      <option v-for="designation in designations" :value="designation">{{ designation }}</option>
+    </select>
+  </div>
     <table id="example" class="table table-hover display" style="width:100%">
       <thead>
         <tr>
@@ -24,19 +31,30 @@ import 'https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js'
 import 'https://cdn.datatables.net/responsive/3.0.0/js/dataTables.responsive.js'
 import 'https://cdn.datatables.net/responsive/3.0.0/js/responsive.bootstrap5.js'
 
+const allDesignations = [...new Set(usersData.map(user => user.designation))];
+
 export default {
   data() {
-    return { users: usersData }
+    return { selectedDesignation: '', users: usersData, designations: allDesignations }
   },
+  methods: {
+    moveDiv() {
+      const div1 = document.querySelector('.dt-filter'); // Get the element to be moved
+      const div2 = document.querySelector('.me-auto'); // Get the target parent element
+      const div3 = document.querySelector('.dt-length');
+      div2.replaceChild(div1, div3); // Append div1 to div2
+      console.log(div2)
+      
+    }},
   mounted() {
 
     let dataTable = new DataTable('#example', {
       responsive: true,
       "language": {
-            "lengthMenu": ""
-        },
-      "order": [],   
-      data: usersData,
+        "lengthMenu": ""
+      },
+      "order": [],
+      data: this.users,
       columns: [
         { data: 'name' },
         { data: 'surname' },
@@ -45,7 +63,18 @@ export default {
       ]
     });
 
-    dataTable;
+    $('#myFilterOption').on('change', function () {
+      let selectedDesignation = $(this).val();
+      self.selectedDesignation = selectedDesignation;
+
+      if (selectedDesignation === "") {
+        dataTable.column(2).search('').draw();
+      } else {
+        dataTable.column(2).search('^' + selectedDesignation + '$', true, false).draw();
+      }
+    })
+
+    this.moveDiv()
   }
 }
 </script>
@@ -55,8 +84,43 @@ export default {
 @import url('https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css');
 @import url('https://cdn.datatables.net/responsive/3.0.0/css/responsive.bootstrap5.css');
 
-.col-12 {
-    height: 470px; /* Set your desired fixed height here */
-    overflow-y: auto; /* Enable vertical scrolling */
+.dt-filter{
+  display:flex;
+  justify-content: center;
 }
+
+.col-12 {
+  height: 470px;
+  overflow-y: auto;
+}
+
+.form-select{
+  width: 200px;
+}
+
+ /* Mobile styles */
+ @media only screen and (max-width: 600px) {
+  .col-12 {
+  height: 280px;
+  overflow-y: auto;
+}
+.container{
+  font-size: 10px;
+}
+.form-select{
+  font-size: 10px;
+}
+.dt-paging{
+  font-size: 10px;
+}
+  }
+
+  /* Tablet styles */
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .col-12 {
+  height: 530px;
+  overflow-y: auto;
+}
+  }
+
 </style>
