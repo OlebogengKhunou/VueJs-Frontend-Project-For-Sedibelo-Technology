@@ -45,7 +45,18 @@ export default {
     const myChart = new Chart(ctx, {
       type: 'pie',
       data: data,
-      responsive: true,
+      options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Pie Chart'
+      }
+    }
+  },
     })
 
     myChart;
