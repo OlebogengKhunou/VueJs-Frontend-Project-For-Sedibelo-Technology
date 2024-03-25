@@ -26,7 +26,7 @@ export default {
     const data = {
       labels: months,
       datasets: [{
-        label: 'BarGraph Dataset',
+        label: 'Statistics',
         data: numInstalls,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -57,6 +57,14 @@ export default {
       data: data,
       responsive: true,
       options: {
+        plugins: {
+      legend: {
+        title: {
+          display: true,
+          text: 'Bar Graph',
+        }
+      }
+    },
         scales: {
           x: {
             title: {
