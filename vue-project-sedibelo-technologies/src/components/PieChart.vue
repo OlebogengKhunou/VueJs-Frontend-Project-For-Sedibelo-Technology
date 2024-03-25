@@ -1,7 +1,9 @@
 <template>
+  <div class="pieHolder">
   <div class='pieChartHolder'>
   <canvas id='myPieChart' class="myPieChart"></canvas>
   </div>
+</div>
 </template>
 
 <script>
@@ -52,32 +54,14 @@ export default {
 </script>
 
 <style>
-/* Mobile styling */
-@media only screen and (max-width: 600px) {
-  .myPieChart {
-    position: relative;
-    top: 20px;
-    padding: 30px;
-  }
+.pieHolder{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 40px;
 }
 
-/* tablet styling */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  .myPieChart {
-    position: relative;
-    bottom: 70px;
-    padding: 130px;
-  }
-}
-
-@media only screen and (min-width: 1025px) {
-   /* .myPieChart {
-    padding: 0 400px;
-    padding-bottom: 800px;
-    padding-top: 30px;
-  } */
   .pieChartHolder{
-    width: 400px;
+    width: 300px;
   }
-}
 </style>
