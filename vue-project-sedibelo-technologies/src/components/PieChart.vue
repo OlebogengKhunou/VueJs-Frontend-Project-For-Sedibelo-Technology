@@ -51,9 +51,9 @@ export default {
     const myChart = new Chart(ctx, {
       type: 'pie',
       data: data,
+      responsive: true,
       plugins: [ChartDataLabels],
       options: {
-        responsive: true,
         plugins: {
           legend: {
             position: 'top',
@@ -79,7 +79,27 @@ export default {
   top: 40px;
 }
 
-.pieChartHolder {
+/* mobile styling */
+@media only screen and (max-width: 767px) {
+  .pieChartHolder {
   width: 300px;
+  height: 520px;
 }
+}
+
+/* tablet and small desktop styling */
+@media only screen and (min-width: 768px)  {
+  .pieChartHolder {
+  width: 425px;
+  height: 702px;
+}
+}
+
+/* tablet and small desktop styling */
+@media only screen and (min-width: 1024px)  {
+  .pieChartHolder {
+  width: 450px;
+}
+}
+
 </style>
