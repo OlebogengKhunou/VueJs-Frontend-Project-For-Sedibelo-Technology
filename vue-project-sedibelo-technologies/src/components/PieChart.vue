@@ -34,7 +34,7 @@ export default {
         backgroundColor: [
           'rgb(255, 0, 0)',
           'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
+          'rgb(74, 122, 77)',
           'rgb(255, 99, 132)',
           'rgb(255, 205, 86)'
         ],
