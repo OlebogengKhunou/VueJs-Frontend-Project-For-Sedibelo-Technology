@@ -1,14 +1,20 @@
 <template>
   <div class="pieHolder">
-  <div class='pieChartHolder'>
-  <canvas id='myPieChart' class="myPieChart"></canvas>
+    <div class='pieChartHolder'>
+      <canvas id='myPieChart' class="myPieChart"></canvas>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import pieChartData from './jsons/pieChart.json'
 import Chart from 'chart.js/auto';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+//Chart.register(ChartDataLabels); this set labels on all chart in this project
+Chart.defaults.set('plugins.datalabels', {
+  color: '#000000'
+});
 
 export default {
   data() {
@@ -45,18 +51,19 @@ export default {
     const myChart = new Chart(ctx, {
       type: 'pie',
       data: data,
+      plugins: [ChartDataLabels],
       options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Pie Chart'
+          }
+        }
       },
-      title: {
-        display: true,
-        text: 'Pie Chart'
-      }
-    }
-  },
     })
 
     myChart;
@@ -65,14 +72,14 @@ export default {
 </script>
 
 <style>
-.pieHolder{
+.pieHolder {
   display: flex;
   justify-content: center;
   position: relative;
   top: 40px;
 }
 
-  .pieChartHolder{
-    width: 300px;
-  }
+.pieChartHolder {
+  width: 300px;
+}
 </style>
