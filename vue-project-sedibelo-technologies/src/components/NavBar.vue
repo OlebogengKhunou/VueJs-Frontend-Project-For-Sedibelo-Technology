@@ -1,7 +1,10 @@
 <template>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Sedibelo Technologies</a>
+            <a class="navbar-brand">
+                <img src="../assets/SedibeloTechnologies.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Sedibelo Technologies
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,7 +22,7 @@
     <router-view />
 </template>
 
-<script setup>
+<script>
 import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js';
 </script>
 
@@ -30,6 +33,9 @@ import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.mi
 @media only screen and (max-width: 600px) {
     nav {
         font-size: 10px;
+    }
+    .navbar-brand{
+        font-size: 10px; 
     }
 }
 </style>
