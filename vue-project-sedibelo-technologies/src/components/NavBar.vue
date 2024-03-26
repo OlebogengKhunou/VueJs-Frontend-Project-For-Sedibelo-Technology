@@ -1,10 +1,4 @@
 <template>
-    <!-- <nav class="navbar navbar-dark bg-dark">
-        <router-link to="/">PieChart</router-link> |
-        <router-link to="/bargraph">BarGraph</router-link> |
-        <router-link to="/users">Users</router-link>
-    </nav> -->
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">Sedibelo Technologies</a>
@@ -32,9 +26,6 @@ import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.mi
 
 <style>
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css';
-/* .router-link-exact-active {
-    background-color: red;
-} */
 
 @media only screen and (max-width: 600px) {
     nav {
