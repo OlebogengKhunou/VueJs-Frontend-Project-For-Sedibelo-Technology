@@ -8,3 +8,4 @@
 - Vue.js
 - Chart.js
 - Bootstrap
+- [DataTable](https://datatables.net/)
