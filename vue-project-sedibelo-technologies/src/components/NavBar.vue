@@ -11,7 +11,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <router-link to="/" class="nav-link">PieChart</router-link>
+                    <router-link to="/" class="nav-link active">PieChart</router-link>
                     <router-link to="/bargraph" class="nav-link">BarGraph</router-link>
                     <router-link to="/users" class="nav-link">Users</router-link>
                 </div>
@@ -29,6 +29,10 @@ import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.mi
 
 <style>
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css';
+
+.nav-link:active {
+background-color: #077c0d;
+}
 
 @media only screen and (max-width: 600px) {
     nav {
